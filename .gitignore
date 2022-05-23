@@ -130,3 +130,15 @@ dmypy.json
 
 # pyenv
 .python-version
+
+# vscode
+.vscode/
+
+# output
+outputs/
+
+# configurations
+configs/
+
+# data directory
+/data
