@@ -43,7 +43,7 @@ repos:
         name: pylint
         entry: poetry run pylint
         types: [python]
-        args: [--disable=all, --enable=unused-import]
+        args: [--disable=all, --enable=unused-import, --load-plugins, pylint_pytest]
         language: system
 
   - repo: local
