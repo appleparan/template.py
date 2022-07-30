@@ -72,4 +72,3 @@ reports=no
 
 # Maximum number of nested blocks for function / method body
 max-nested-blocks=5
-
