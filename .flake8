@@ -20,6 +20,9 @@ quiet = 0
 # Select the formatter used to display errors to the user.
 format = pylint
 
+# docstring format:
+docstring_style=google
+
 # Print the total number of errors.
 count = True
 # Print the source code generating the error/warning in question.
