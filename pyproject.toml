@@ -25,6 +25,7 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Topic :: Software Development :: Libraries :: Python Modules"
 ]
+
 [project.optional-dependencies]
 dev = [
     "pytest >= 7.1.2",
