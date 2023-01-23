@@ -161,9 +161,6 @@ warn_unused_ignores = true
 source = ["tests"]
 branch = true
 
-[tool.coverage.paths]
-source = "hooks"
-
 [tool.coverage.report]
 fail_under = 50
 show_missing = true
