@@ -47,19 +47,19 @@ repos:
           [--disable=all, --enable=unused-import, --load-plugins, pylint_pytest]
         language: system
 
-  # - repo: local
-  #   hooks:
-  #     - id: mypy
-  #       name: mypy
-  #       entry: python -m  mypy
-  #       exclude: |
-  #         (?x)(
-  #             ^tests/|
-  #             ^scripts.py
-  #         )
-  #       types: [python]
-  #       args: [--strict]
-  #       language: system
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        entry: python -m  mypy
+        exclude: |
+          (?x)(
+              ^tests/|
+              ^scripts.py
+          )
+        types: [python]
+        args: [--strict]
+        language: system
 
   - repo: local
     hooks:
