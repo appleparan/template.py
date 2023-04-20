@@ -10,7 +10,7 @@ authors = [
 dependencies = [
 
 ]
-requires-python = ">=3.9, <4.0"
+requires-python = ">=3.10, <4.0"
 keywords = [
     "template",
     "python",
@@ -57,7 +57,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.black]
 line-length = 100
-target-version = ['py39', 'py310', 'py311']
+target-version = ['py310', 'py311']
 include = '\.pyi?$'
 color = true
 extend-exclude = '''
@@ -116,8 +116,8 @@ filterwarnings = [
 ]
 
 [tool.isort]
-py_version = 39
-line_length = 100
+py_version = 310
+line_length = 120
 multi_line_output=3
 include_trailing_comma=true
 indent=4
@@ -167,4 +167,4 @@ show_missing = true
 
 [tool.pydocstyle]
 convention = "google"
-match = '((?!_test).)*\.py'
+# match = '((?!_test).)*\.py'
