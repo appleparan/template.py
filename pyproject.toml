@@ -1,7 +1,7 @@
 [project]
 name = "template"
-version = "0.1.0"
-description = "Description"
+version = "0.2.0"
+description = "Just a template"
 readme = "README.md"
 license = {file="LICENSE"}
 authors = [
@@ -21,8 +21,8 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Topic :: Software Development :: Libraries :: Python Modules"
 ]
 
@@ -34,6 +34,8 @@ dev = [
     "mypy",
     "mypy-extensions",
     "ruff",
+    "pip-tools",
+    "pip-autoremove",
     "pytest",
     "pytest-cov",
     "pytest-html",
