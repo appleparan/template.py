@@ -186,6 +186,8 @@ exclude = [
     "dist",
     "node_modules",
     "venv",
+    "docs",
+    "data",
 ]
 ignore = [
     "B017",
