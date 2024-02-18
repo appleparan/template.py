@@ -123,7 +123,7 @@ filterwarnings = [
 
 [tool.mypy]
 # https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file
-python_version = 3.9
+python_version = "3.11"
 plugins = "numpy.typing.mypy_plugin"
 pretty = true
 show_traceback = true
@@ -189,10 +189,12 @@ exclude = [
     "docs",
     "data",
 ]
-ignore = [
+lint.ignore = [
     "B017",
     "C408",
     "C901",
+    "D100", # undocumented-public-module
+    "D101", # undocumented-public-class
     "E501",
     "E741",
     "F401",
@@ -200,11 +202,12 @@ ignore = [
     "F811",
     "F841",
 ]
-select = [
+lint.select = [
+    "AIR",  # Airflow
+    "ANN",  # flake8-annotations: https://stackoverflow.com/a/63550734/743078
     "ARG",  # flake8-unused-arguments
-    "B",
-    "B9",
-    "C",
+    "B",    # flake8-bugbear
+    "B9",   # flake8-broken-line
     "COM",  # flake8-commas
     "D",    # pydocstyle
     "DTZ",  # flake8-datetimez
@@ -217,26 +220,41 @@ select = [
     "N",    # pep8-naming
     "NPY",  # NumPy-specific rules
     "PD",   # pandas-vet
+    "PERF", # Perflint
     "PT",   # flake8-pytest-style
     "PTH",  # flake8-use-pathlib
     "RUF",  # Ruff-specific rules
     "S",    # flake8-bandit
     "SIM",  # flake8-simplify
     "TID",  # flake8-tidy-imports
+    "YTT",  # flake8-2020
     "UP",   # pyupgrade
     "W",    # pycodestyle
 ]
 # Same as Black.
 line-length = 88
 # Allow unused variables when underscore-prefixed.
-dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
-# Assume Python 3.10.
+lint.dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+# Assume Python 3.11
 target-version = "py311"
 
-[tool.ruff.mccabe]
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+[tool.ruff.lint.mccabe]
 max-complexity = 18
 
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.per-file-ignores]
 "**/configs/**.py" = [
     "F401",
     "E402",
@@ -265,9 +283,9 @@ max-complexity = 18
     "E402",
 ]
 
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "google"
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 known-third-party = ["numpy", "scipy", "pandas", "matplotlib", "sklearn", "tensorflow", "tqdm"]
 # sections = ["FUTURE", "TYPING", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]

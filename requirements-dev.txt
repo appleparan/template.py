@@ -6,86 +6,100 @@
 #
 accessible-pygments==0.0.4
     # via pydata-sphinx-theme
-alabaster==0.7.13
+alabaster==0.7.16
     # via sphinx
-babel==2.12.1
+authlib==1.3.0
+    # via safety
+babel==2.14.0
     # via
     #   pydata-sphinx-theme
     #   sphinx
-beautifulsoup4==4.12.2
+beautifulsoup4==4.12.3
     # via pydata-sphinx-theme
-black==23.7.0
+black==24.2.0
     # via template (pyproject.toml)
 bottleneck==1.3.7
     # via pandas
-build==0.10.0
+build==1.0.3
     # via pip-tools
-certifi==2023.7.22
+certifi==2024.2.2
     # via requests
-cfgv==3.3.1
+cffi==1.16.0
+    # via cryptography
+cfgv==3.4.0
     # via pre-commit
-charset-normalizer==3.2.0
+charset-normalizer==3.3.2
     # via requests
-click==8.1.6
+click==8.1.7
     # via
     #   black
     #   pip-tools
     #   safety
+    #   typer
 contourpy==1.2.0
     # via matplotlib
-coverage[toml]==7.2.7
+coverage[toml]==7.4.1
     # via
     #   coverage-badge
     #   pytest-cov
     #   template (pyproject.toml)
 coverage-badge==1.1.0
     # via template (pyproject.toml)
+cryptography==42.0.3
+    # via authlib
 cycler==0.12.1
     # via matplotlib
-distlib==0.3.7
+distlib==0.3.8
     # via virtualenv
 docutils==0.20.1
     # via
     #   myst-parser
     #   pydata-sphinx-theme
     #   sphinx
-dparse==0.6.3
-    # via safety
-filelock==3.12.2
+dparse==0.6.4b0
+    # via
+    #   safety
+    #   safety-schemas
+filelock==3.13.1
     # via virtualenv
-fonttools==4.45.1
+fonttools==4.49.0
     # via matplotlib
-identify==2.5.26
+identify==2.5.34
     # via pre-commit
-idna==3.4
+idna==3.6
     # via requests
 imagesize==1.4.1
     # via sphinx
 iniconfig==2.0.0
     # via pytest
-jinja2==3.1.2
+jinja2==3.1.3
     # via
     #   myst-parser
+    #   pytest-html
+    #   safety
     #   sphinx
 joblib==1.3.2
     # via scikit-learn
 kiwisolver==1.4.5
     # via matplotlib
-llvmlite==0.41.1
+llvmlite==0.42.0
     # via numba
 markdown-it-py==3.0.0
     # via
     #   mdit-py-plugins
     #   myst-parser
-markupsafe==2.1.3
+    #   rich
+markupsafe==2.1.5
     # via jinja2
-matplotlib==3.8.2
+marshmallow==3.20.2
+    # via safety
+matplotlib==3.8.3
     # via template (pyproject.toml)
 mdit-py-plugins==0.4.0
     # via myst-parser
 mdurl==0.1.2
     # via markdown-it-py
-mypy==1.4.1
+mypy==1.8.0
     # via template (pyproject.toml)
 mypy-extensions==1.0.0
     # via
@@ -96,11 +110,11 @@ myst-parser==2.0.0
     # via template (pyproject.toml)
 nodeenv==1.8.0
     # via pre-commit
-numba==0.58.1
+numba==0.59.0
     # via pandas
-numexpr==2.8.7
+numexpr==2.9.0
     # via pandas
-numpy==1.26.2
+numpy==1.26.4
     # via
     #   bottleneck
     #   contourpy
@@ -112,53 +126,62 @@ numpy==1.26.2
     #   scikit-learn
     #   scipy
     #   template (pyproject.toml)
-packaging==23.1
+packaging==23.2
     # via
     #   black
     #   build
     #   dparse
+    #   marshmallow
     #   matplotlib
     #   plotly
     #   pydata-sphinx-theme
     #   pytest
     #   safety
+    #   safety-schemas
     #   sphinx
-pandas[parquet,performance]==2.1.3
+pandas[parquet,performance]==2.2.0
     # via template (pyproject.toml)
-pathspec==0.11.2
+pathspec==0.12.1
     # via black
-pillow==10.1.0
+pillow==10.2.0
     # via matplotlib
 pip-autoremove==0.10.0
     # via template (pyproject.toml)
-pip-tools==7.2.0
+pip-tools==7.4.0
     # via template (pyproject.toml)
-platformdirs==3.10.0
+platformdirs==4.2.0
     # via
     #   black
     #   virtualenv
-plotly==5.18.0
+plotly==5.19.0
     # via template (pyproject.toml)
-pluggy==1.2.0
+pluggy==1.4.0
     # via pytest
-pre-commit==3.3.3
+pre-commit==3.6.1
     # via template (pyproject.toml)
-py==1.11.0
-    # via pytest-html
-pyarrow==14.0.1
+pyarrow==15.0.0
     # via pandas
-pydata-sphinx-theme==0.14.4
+pycparser==2.21
+    # via cffi
+pydantic==1.10.14
+    # via
+    #   safety
+    #   safety-schemas
+pydata-sphinx-theme==0.15.2
     # via template (pyproject.toml)
-pygments==2.16.1
+pygments==2.17.2
     # via
     #   accessible-pygments
     #   pydata-sphinx-theme
+    #   rich
     #   sphinx
 pyparsing==3.1.1
     # via matplotlib
 pyproject-hooks==1.0.0
-    # via build
-pytest==7.4.0
+    # via
+    #   build
+    #   pip-tools
+pytest==8.0.1
     # via
     #   pytest-cov
     #   pytest-html
@@ -166,15 +189,15 @@ pytest==7.4.0
     #   template (pyproject.toml)
 pytest-cov==4.1.0
     # via template (pyproject.toml)
-pytest-html==3.2.0
+pytest-html==4.1.1
     # via template (pyproject.toml)
-pytest-metadata==3.0.0
+pytest-metadata==3.1.1
     # via pytest-html
 python-dateutil==2.8.2
     # via
     #   matplotlib
     #   pandas
-pytz==2023.3.post1
+pytz==2024.1
     # via pandas
 pyyaml==6.0.1
     # via
@@ -185,17 +208,23 @@ requests==2.31.0
     #   safety
     #   sphinx
     #   sphinxcontrib-youtube
-ruamel-yaml==0.17.32
+rich==13.7.0
     # via safety
-ruamel-yaml-clib==0.2.7
+ruamel-yaml==0.18.6
+    # via
+    #   safety
+    #   safety-schemas
+ruamel-yaml-clib==0.2.8
     # via ruamel-yaml
-ruff==0.0.282
+ruff==0.2.2
     # via template (pyproject.toml)
-safety==2.3.4
+safety==3.0.1
     # via template (pyproject.toml)
-scikit-learn==1.3.2
+safety-schemas==0.0.2
+    # via safety
+scikit-learn==1.4.1.post1
     # via template (pyproject.toml)
-scipy==1.11.4
+scipy==1.12.0
     # via scikit-learn
 six==1.16.0
     # via python-dateutil
@@ -203,43 +232,51 @@ snowballstemmer==2.2.0
     # via sphinx
 soupsieve==2.5
     # via beautifulsoup4
-sphinx==7.1.2
+sphinx==7.2.6
     # via
     #   myst-parser
     #   pydata-sphinx-theme
     #   sphinxcontrib-youtube
     #   template (pyproject.toml)
-sphinxcontrib-applehelp==1.0.4
+sphinxcontrib-applehelp==1.0.8
     # via sphinx
-sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-devhelp==1.0.6
     # via sphinx
-sphinxcontrib-htmlhelp==2.0.1
+sphinxcontrib-htmlhelp==2.0.5
     # via sphinx
 sphinxcontrib-jsmath==1.0.1
     # via sphinx
-sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-qthelp==1.0.7
     # via sphinx
-sphinxcontrib-serializinghtml==1.1.5
+sphinxcontrib-serializinghtml==1.1.10
     # via sphinx
 sphinxcontrib-youtube==1.4.1
     # via template (pyproject.toml)
 tenacity==8.2.3
     # via plotly
-threadpoolctl==3.2.0
+threadpoolctl==3.3.0
     # via scikit-learn
-tqdm==4.66.1
+tqdm==4.66.2
     # via template (pyproject.toml)
-typing-extensions==4.7.1
+typer==0.9.0
+    # via safety
+typing-extensions==4.9.0
     # via
     #   mypy
+    #   pydantic
     #   pydata-sphinx-theme
-tzdata==2023.3
+    #   safety
+    #   safety-schemas
+    #   typer
+tzdata==2024.1
     # via pandas
-urllib3==2.0.4
-    # via requests
-virtualenv==20.24.2
+urllib3==2.2.1
+    # via
+    #   requests
+    #   safety
+virtualenv==20.25.0
     # via pre-commit
-wheel==0.41.1
+wheel==0.42.0
     # via pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
