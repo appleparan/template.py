@@ -287,5 +287,5 @@ max-complexity = 18
 convention = "google"
 
 [tool.ruff.lint.isort]
-known-third-party = ["numpy", "scipy", "pandas", "matplotlib", "sklearn", "tensorflow", "tqdm"]
+known-third-party = ["numpy", "scipy", "pandas", "matplotlib", "sklearn", "torch", "tqdm"]
 # sections = ["FUTURE", "TYPING", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
