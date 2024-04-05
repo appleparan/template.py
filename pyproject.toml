@@ -33,7 +33,6 @@ classifiers = [
 
 [project.optional-dependencies]
 dev = [
-    "black",
     "coverage",
     "coverage-badge",
     "mypy",
@@ -61,28 +60,6 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 packages = ["template"] # Change this
-
-[tool.black]
-target-version = ['py311', 'py312']
-include = '\.pyi?$'
-color = true
-extend-exclude = '''
-/(
-  # The following are specific to Black, you probably don't want those.
-  \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-  | env
-  | venv
-  | tests/data
-)/
-'''
 
 # pyproject.toml
 [tool.pytest.ini_options]
@@ -188,6 +165,7 @@ exclude = [
     "venv",
     "docs",
     "data",
+    "tests/data",
 ]
 # Same as Black.
 line-length = 88
