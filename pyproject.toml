@@ -192,7 +192,6 @@ select = [
     "ARG",  # flake8-unused-arguments
     "B",    # flake8-bugbear
     "B9",   # flake8-broken-line
-    "COM",  # flake8-commas
     "D",    # pydocstyle
     "DTZ",  # flake8-datetimez
     "E",    # pycodestyle
@@ -200,7 +199,6 @@ select = [
     "F",    # pyflakes
     "FBT",  # flake8-boolean-trap
     "G",    # flake8-logging-format
-    "ISC",  # flake8-implicit-str-concat
     "N",    # pep8-naming
     "NPY",  # NumPy-specific rules
     "PD",   # pandas-vet
