@@ -66,7 +66,7 @@ tenacity==8.2.3
     # via plotly
 threadpoolctl==3.3.0
     # via scikit-learn
-tqdm==4.66.2
+tqdm==4.66.3
     # via template (pyproject.toml)
 tzdata==2024.1
     # via pandas
