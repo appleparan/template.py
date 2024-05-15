@@ -2,23 +2,30 @@
 Personal Python package template
 
 # For developers
+## Update pip, setuptools, wheel first
+```
+python3 -m pip install -U pip setuptools wheel
+```
+
+## Install [uv](https://github.com/astral-sh/uv)
+```
+python3 -m pip install uv
+```
+
 ## Install packages
 ```
-python3 -m pip install -e .
+uv --preview pip install -e .
 ```
 
 ## Install dev packages
 ```
-python3 -m pip install -e ".[dev]"
+uv --preview pip install -e ".[dev]"
 ```
 
-## Additional tools for package management
-```
-python3 -m pip install pip-tools pip-autoremove
-```
+## Generate requirements.txt and requirements-dev.txt files
+* This files are served as lock file.
 
-## Generate requirements.txt files using pip-tools
 ```
-pip-compile -o requirements.txt pyproject.toml
-pip-compile --extra dev -o requirements-dev.txt pyproject.toml
+uv --preview pip compile pyproject.toml -o requirements.txt
+uv --preview pip compile pyproject.toml --extra dev -o requirements-dev.txt
 ```
