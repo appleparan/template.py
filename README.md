@@ -1,34 +1,73 @@
 # template.py
 Personal Python package template
 
-# For developers
-## Update pip, setuptools, wheel first
+# For Developers
+
+## Install Packages
+### Update pip, setuptools, wheel first
 ```
 python3 -m pip install -U pip setuptools wheel
 ```
 
-## Install [uv](https://github.com/astral-sh/uv)
+### Install [uv](https://github.com/astral-sh/uv)
 ```
 python3 -m pip install uv
 ```
 
-## Install packages
+### Install packages
 ```
 uv --preview pip install -e .
 ```
 
-## Install dev packages
+### Install dev packages
 ```
 uv --preview pip install -e ".[dev]"
 ```
 
-## Generate requirements.txt and requirements-dev.txt files
+### Generate requirements.txt and requirements-dev.txt files
 * This files are served as lock file.
 
 ```
 uv --preview pip compile pyproject.toml -o requirements.txt
 uv --preview pip compile pyproject.toml --extra dev -o requirements-dev.txt
 ```
+
+## Testing
+### Run tests
+```
+pytest
+```
+## Development
+### Run pre-commit
+```
+pre-commit run --all-files
+```
+
+### Build package
+```
+python3 setup.py sdist bdist_wheel
+```
+
+### Clean package
+```
+python3 setup.py clean --all
+```
+
+## Deployment
+### Build Docker Image
+```
+docker build -t my-production-app .
+```
+
+### Run Docker Container
+```
+docker run --gpus all -p 8000:8000 my-production-app
+```
+
+# References
+* [Packaging Python Projects](https://packaging.python.org/tutorials/packaging-projects/)
+* [Python Packaging User Guide](https://packaging.python.org/)
+
 
 # License
 
