@@ -44,6 +44,8 @@ classifiers = [
 dev = [
     "coverage",
     "coverage-badge",
+    "mkdocs",
+    "mkdocs-material",
     "mypy",
     "mypy-extensions",
     "myst-parser",
@@ -54,8 +56,6 @@ dev = [
     "pytest-html",
     "pre-commit",
     "safety",
-    "sphinx",
-    "sphinxcontrib-youtube",
 ]
 
 [build-system]
