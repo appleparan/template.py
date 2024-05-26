@@ -24,12 +24,18 @@ uv --preview pip install -e .
 uv --preview pip install -e ".[dev]"
 ```
 
+### Install doc packages
+```
+uv --preview pip install -e ".[doc]"
+```
+
 ### Generate requirements.txt and requirements-dev.txt files
 * This files are served as lock file.
 
 ```
 uv --preview pip compile pyproject.toml -o requirements.txt
 uv --preview pip compile pyproject.toml --extra dev -o requirements-dev.txt
+uv --preview pip compile pyproject.toml --extra doc -o requirements-doc.txt
 ```
 
 ## Testing

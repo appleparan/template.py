@@ -50,12 +50,15 @@ dev = [
     "mypy-extensions",
     "myst-parser",
     "ruff",
-    "pydata-sphinx-theme",
     "pytest",
     "pytest-cov",
     "pytest-html",
     "pre-commit",
     "safety",
+]
+doc = [
+    "mkdocs",
+    "mkdocs-material",
 ]
 
 [build-system]
