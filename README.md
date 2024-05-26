@@ -1,4 +1,7 @@
 # template.py
+
+[![Documentation Status](https://readthedocs.org/projects/templatepy/badge/?version=latest)](https://templatepy.readthedocs.io/en/latest/?badge=latest)
+
 Personal Python package template
 
 # For Developers
