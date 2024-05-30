@@ -46,7 +46,18 @@ uv --preview pip compile pyproject.toml --extra doc -o requirements-doc.txt
 ```
 pytest
 ```
+
 ## Development
+### Linting
+```
+ruff check --fix .
+```
+
+### Formatting
+```
+ruff format .
+```
+
 ### Run pre-commit
 ```
 pre-commit run --all-files
