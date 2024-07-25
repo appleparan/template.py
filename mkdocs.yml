@@ -237,7 +237,29 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  # - About: about.md
+  - API Reference: api/
   # - Guide:
   #     - Introduction: guide/introduction.md
   #     - Installation: guide/installation.md
+
+plugins:
+  - search
+  - gen-files:
+      scripts:
+        - scripts/gen_ref_pages.py
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - section-index
+  - mkdocstrings:
+      handlers:
+        python:
+          rendering:
+            show_source: true
+          options:
+            show_symbol_type_toc: true
+            docstring_options:
+              ignore_init_summary: true
+            docstring_section_style: list
+            filters: ["!^_"]
+          import:
+          - https://docs.python.org/3/objects.inv

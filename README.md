@@ -73,6 +73,16 @@ python3 setup.py sdist bdist_wheel
 python3 setup.py clean --all
 ```
 
+### Serve Document
+```
+mkdocs serve
+```
+
+### Build Document
+```
+mkdocs build
+```
+
 ## Deployment
 ### Build Docker Image
 ```
