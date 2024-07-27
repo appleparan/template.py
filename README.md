@@ -43,7 +43,7 @@ rye run pytest
 ## Development
 ### Linting
 ```
-rye lint
+rye lint --fix
 ```
 
 ### Formatting
