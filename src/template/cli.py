@@ -1,9 +1,11 @@
 """CLI module."""
+
 import typer
 
 app = typer.Typer()
 
-def main():
+
+def main() -> None:
     """Main function."""
     print("Hello, world!")
 

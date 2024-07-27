@@ -6,87 +6,89 @@ Personal Python package template
 
 # For Developers
 
+## Decide to use virtual project
+Virtual projects are projects which are themselves not installable Python packages, but that will sync their dependencies. They are declared like a normal python package in a pyproject.toml, but they do not create a package. [ref. rye docs](https://rye.astral.sh/guide/virtual/)
+
+* Set `tool.rye.virtual` key to `true` in `pyproject.toml`. [ref: rye docs](https://rye.astral.sh/guide/pyproject/#toolryevirtual)
+
+
+## Init package
+### Setup Python version
+```
+rye pin 3.12
+```
+
+### [First Sync](https://rye.astral.sh/guide/basics/#first-sync)
+```
+rye sync
+```
+
 ## Install Packages
-### Update pip, setuptools, wheel first
-```
-python3 -m pip install -U pip setuptools wheel
-```
-
-### Install [uv](https://github.com/astral-sh/uv)
-```
-python3 -m pip install uv
-```
-
 ### Install packages
 ```
-uv --preview pip install -e .
+rye sync --no-dev
 ```
 
 ### Install dev packages
 ```
-uv --preview pip install -e ".[dev]"
-```
-
-### Install doc packages
-```
-uv --preview pip install -e ".[doc]"
-```
-
-### Generate requirements.txt and requirements-dev.txt files
-* This files are served as lock file.
-
-```
-uv --preview pip compile pyproject.toml -o requirements.txt
-uv --preview pip compile pyproject.toml --extra dev -o requirements-dev.txt
-uv --preview pip compile pyproject.toml --extra doc -o requirements-doc.txt
+rye sync
 ```
 
 ## Testing
 ### Run tests
 ```
-pytest
+rye run pytest
 ```
 
 ## Development
 ### Linting
 ```
-ruff check --fix .
+rye lint
 ```
 
 ### Formatting
 ```
-ruff format .
+rye fmt
 ```
 
 ### Run pre-commit
 ```
-pre-commit run --all-files
+rye run pre-commit run --all-files
 ```
 
 ### Build package
 ```
-python3 setup.py sdist bdist_wheel
+rye build
 ```
 
-### Clean package
-```
-python3 setup.py clean --all
-```
+## Documentation
 
 ### Serve Document
 ```
-mkdocs serve
+rye run mkdocs serve
 ```
 
 ### Build Document
 ```
-mkdocs build
+rye run mkdocs build
 ```
 
-## Deployment
-### Build Docker Image
+## Container
+### Build Docker Image (from source)
+
+[ref. rye docs](https://rye.astral.sh/guide/docker/#container-from-source)
+
 ```
-docker build -t my-production-app .
+docker build -t TAGNAME .
+```
+
+### Build Docker Image (from package)
+
+[ref. rye docs](https://rye.astral.sh/guide/docker/#container-from-a-python-package)
+
+```
+rye build --wheel --clean
+docker build -t TAGNAME .
 ```
 
 ### Run Docker Container

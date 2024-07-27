@@ -44,21 +44,9 @@ RUN wget https://www.python.org/ftp/python/3.12.0/Python-3.12.3.tgz && \
 RUN python3.12 -m ensurepip && \
     python3.12 -m pip install --upgrade pip
 
-# Copy requirements.txt into the image
-COPY requirements.txt .
+# Use requirements.lock rather than requirements.txt for deterministic builds
+COPY requirements.lock ./
+RUN PYTHONDONTWRITEBYTECODE=1 pip install --no-cache-dir -r requirements.lock
 
-# Install Python packages from requirements.txt
-RUN python3.12 -m pip install --no-cache-dir -r requirements.txt
-
-# Copy all project source code into the image
-COPY . /workspace
-
-# Set environment variables
-ENV APP_ENV=production
-ENV APP_DEBUG=false
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --retries=3 CMD curl -f http://localhost:8000/health || exit 1
-
-# Set the entrypoint to your application
-# ENTRYPOINT ["python3.12", "/workspace/main.py"]
+COPY src .
+CMD python main.py

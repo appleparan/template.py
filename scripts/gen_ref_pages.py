@@ -8,10 +8,10 @@ nav = mkdocs_gen_files.Nav()
 
 root = Path(__file__).parent.parent
 # float layout
-module_name = "template" # Change this!
+module_name = "template"  # Change this!
 src = root / module_name
 
-for path in sorted(src.rglob("*.py")):  
+for path in sorted(src.rglob("*.py")):
     module_path = module_name / path.relative_to(src).with_suffix("")
     doc_path = path.relative_to(src).with_suffix(".md")
     full_doc_path = Path("api", doc_path)

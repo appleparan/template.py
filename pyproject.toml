@@ -66,14 +66,43 @@ doc = [
 ]
 
 [build-system]
-requires = ["setuptools >= 67.0", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 # [project.scripts]
 # template-cli = "template.cli" # Change this
 
 [tool.setuptools]
 packages = ["template"] # Change this
+
+[tool.rye]
+managed = true
+virtual = false
+dev-dependencies = [
+    "coverage",
+    "coverage-badge",
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings[python]",
+    "mkdocs-gen-files",
+    "mkdocs-section-index",
+    "mkdocs-literate-nav",
+    "mypy",
+    "mypy-extensions",
+    "myst-parser",
+    "ruff",
+    "pytest",
+    "pytest-cov",
+    "pytest-html",
+    "pre-commit",
+    "safety",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/template.py"]
 
 [tool.uv.pip]
 index-url = "https://pypi.org/simple"
