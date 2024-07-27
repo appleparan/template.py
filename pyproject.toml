@@ -14,12 +14,7 @@ dependencies = [
     "scikit-learn",
     "tqdm",
     "torch",
-    # "torch_geometric",
-    # "pyg_lib",
-    # "torch_scatter",
-    # "torch_sparse",
-    # "torch_cluster",
-    # "torch_spline_conv"
+    "typer",
 ]
 requires-python = ">=3.11, <4.0"
 keywords = [
