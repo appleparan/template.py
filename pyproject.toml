@@ -97,7 +97,7 @@ dev-dependencies = [
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/template.py"]
+packages = ["src/template"]
 
 [tool.uv.pip]
 index-url = "https://pypi.org/simple"
@@ -257,7 +257,6 @@ select = [
     "PT",   # flake8-pytest-style
     "PTH",  # flake8-use-pathlib
     "RUF",  # Ruff-specific rules
-    "S",    # flake8-bandit
     "SIM",  # flake8-simplify
     "TID",  # flake8-tidy-imports
     "YTT",  # flake8-2020

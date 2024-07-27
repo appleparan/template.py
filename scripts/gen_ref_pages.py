@@ -8,20 +8,20 @@ nav = mkdocs_gen_files.Nav()
 
 root = Path(__file__).parent.parent
 # float layout
-module_name = "template"  # Change this!
-src = root / module_name
+src = root / "src"
 
 for path in sorted(src.rglob("*.py")):
-    module_path = module_name / path.relative_to(src).with_suffix("")
+    module_path = path.relative_to(src).with_suffix("")
+    # Exclude tests directory
+    if str(module_path).split('/')[0] == "tests":
+        continue
     doc_path = path.relative_to(src).with_suffix(".md")
     full_doc_path = Path("api", doc_path)
 
     parts = tuple(module_path.parts)
 
     if parts[-1] == "__init__":
-        if len(parts[:-1]) != 0:
-            parts = parts[:-1]
-
+        parts = parts[:-1]
         doc_path = doc_path.with_name("index.md")
         full_doc_path = full_doc_path.with_name("index.md")
     elif parts[-1].startswith("_"):
@@ -34,9 +34,7 @@ for path in sorted(src.rglob("*.py")):
         # fd.write(f"::: {ident}")
         fd.write(f"---\ntitle: {ident}\n---\n\n::: {ident}")
 
-    # mkdocs_gen_files.set_edit_path(full_doc_path, path.relative_to(root))
-    mkdocs_gen_files.set_edit_path(full_doc_path, ".." / path.relative_to(root))
-
+    mkdocs_gen_files.set_edit_path(full_doc_path, path.relative_to(root))
 
 with mkdocs_gen_files.open("api/SUMMARY.md", "w") as nav_file:
     nav_file.writelines(nav.build_literate_nav())

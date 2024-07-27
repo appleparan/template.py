@@ -253,6 +253,7 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
+          paths: [src]  # search packages in the src folder
           rendering:
             show_source: true
           options:
@@ -260,6 +261,6 @@ plugins:
             docstring_options:
               ignore_init_summary: true
             docstring_section_style: list
-            filters: ["!^_"]
+            filters: ["!^_", "!^test_"]
           import:
           - https://docs.python.org/3/objects.inv
