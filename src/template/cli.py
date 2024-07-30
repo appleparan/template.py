@@ -4,7 +4,7 @@ import typer
 
 app = typer.Typer()
 
-
+@app.command()
 def main() -> None:
     """Main function."""
     print("Hello, world!")
