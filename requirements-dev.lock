@@ -12,6 +12,8 @@
 -e file:.
 alabaster==0.7.16
     # via sphinx
+appdirs==1.4.4
+    # via git-changelog
 babel==2.15.0
     # via mkdocs-material
     # via sphinx
@@ -56,6 +58,7 @@ fsspec==2024.6.1
     # via torch
 ghp-import==2.1.0
     # via mkdocs
+git-changelog==2.5.2
 griffe==0.48.0
     # via mkdocstrings-python
 identify==2.6.0
@@ -67,6 +70,7 @@ imagesize==1.4.1
 iniconfig==2.0.0
     # via pytest
 jinja2==3.1.4
+    # via git-changelog
     # via mkdocs
     # via mkdocs-material
     # via mkdocstrings
@@ -178,8 +182,9 @@ nvidia-nvjitlink-cu12==12.5.82
     # via nvidia-cusparse-cu12
 nvidia-nvtx-cu12==12.1.105
     # via torch
-packaging==21.3
+packaging==24.1
     # via dparse
+    # via git-changelog
     # via matplotlib
     # via mkdocs
     # via plotly
@@ -214,7 +219,6 @@ pymdown-extensions==10.9
     # via mkdocstrings
 pyparsing==3.1.2
     # via matplotlib
-    # via packaging
 pytest==8.3.2
     # via pytest-cov
     # via pytest-html
@@ -251,11 +255,13 @@ ruamel-yaml==0.18.6
 ruamel-yaml-clib==0.2.8
     # via ruamel-yaml
 ruff==0.5.5
-safety==2.3.5
+safety==2.3.4
 scikit-learn==1.5.1
     # via template
 scipy==1.14.0
     # via scikit-learn
+semver==3.0.2
+    # via git-changelog
 setuptools==71.1.0
     # via safety
     # via torch
